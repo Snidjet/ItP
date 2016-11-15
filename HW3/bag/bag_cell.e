@@ -1,5 +1,5 @@
 class
-	BAG_CELL [G->COMPARABLE] -- Complete if necessary
+	BAG_CELL [G] -- Complete if necessary
 
 
 
@@ -28,12 +28,7 @@ feature -- Access
 
 	next: BAG_CELL [G]
 			-- Next cell.
-	is_less  (other:like Current):BOOLEAN
-	do
-		if current.value<other.value then
-			Result:=TRUE
-		end
-	end
+
 
 feature -- Setting
 
