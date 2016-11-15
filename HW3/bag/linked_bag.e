@@ -165,23 +165,30 @@ feature -- Element change
 			link_bag_copy: LINKED_BAG [G]
 			ll_bag:LINKED_LIST[G]
 		do
+
 			create link_bag_copy
 			create ll_bag.make
+
 				--copy current object in `link_bag_copy'
+
 			from
 				c := first
+
 			until
-				c /= Void
+				c=Void
+
 			loop
+
 				link_bag_copy.add (c.value, c.count)
 				c := c.next
+
 			end
 				--sorting
 
 			from
 				c := first
 			until
-				c /= Void
+				c = Void
 			loop
 				temp := link_bag_copy.link_on_v (link_bag_copy.min)
 				across
@@ -202,7 +209,7 @@ feature {LINKED_BAG} -- Implementation
 
 	last: BAG_CELL [G]
 			-- Last cell
-feature {TEST} --output
+feature  {TEST}--output
 	str: STRING
 		local
 			c: BAG_CELL [G]
@@ -217,7 +224,7 @@ feature {TEST} --output
 
 
 				Result.append ("" + c.value.out + "  COUNT =  ")
-				Result.append ("" + c.count.out + "%N   ")
+				Result.append ("" + c.count.out + "%N")
 
 				c := c.next
 			end

@@ -29,9 +29,11 @@ feature -- Testing the implementation
 
 				end
 			end
+			io.put_string ("%N%N%NUNSORTED LINKED LIST%N%N")
 			io.put_string (cards.str)
 			io.put_string ("%N%N%N SORTED LINKED LIST: %N%N")
 			io.put_string (linked_list_out (cards.sorted_linker_list))
+
 
 		end
 
@@ -44,10 +46,9 @@ linked_list_out (ll: LINKED_LIST [CARD]): STRING
 			across
 				ll as it
 			loop
-				Result.append ("  V  %N")
-				Result.append ("+--------+%N")
-				Result.append ("| " + it.item.out + " | %N")
-				Result.append ("+--------+%N")
+
+				Result.append (it.item.out)
+
 			end
 			Result.append ("%N")
 		end
