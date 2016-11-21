@@ -29,9 +29,9 @@ feature -- Testing the implementation
 
 				end
 			end
-			io.put_string ("%N%N%NUNSORTED LINKED LIST%N%N")
+			io.put_string ("%N%T%T========================%N%T%T  UNSORTED LINKED_BAG %N%T%T========================%N")
 			io.put_string (cards.str)
-			io.put_string ("%N%N%N SORTED LINKED LIST: %N%N")
+			io.put_string ("%N%T%T=======================%N%T%T  SORTED LINKED LIST%N%T%T=======================%N")
 			io.put_string (linked_list_out (cards.sorted_linker_list))
 
 

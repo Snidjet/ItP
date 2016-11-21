@@ -6,7 +6,10 @@ note
 
 class
 	CARD
-inherit COMPARABLE
+
+inherit
+
+	COMPARABLE
 
 create
 	make
@@ -14,7 +17,7 @@ create
 feature
 
 	make (n: INTEGER; c: CHARACTER)
-			--creation feature for card
+			--creation feature for card.
 		require
 			valid_number: n >= 1 and n <= 20
 			valid_color: c = 'R' or c = 'W' or c = 'G' or c = 'B'
@@ -35,11 +38,12 @@ feature
 	colour: CHARACTER
 			--Colour of the card.
 
-feature  --Queries
+feature --Queries
 
-	is_less alias "<"(other:like CURRENT): BOOLEAN
+	is_less alias "<" (other: like CURRENT): BOOLEAN
 			--is this card less than  `other'
 			--card 'B' less than 'G', 'G' less than 'R', 'R' less than 'W'
+
 		do
 			if current.colour /= other.colour then
 				if current.colour < other.colour then
@@ -53,8 +57,6 @@ feature  --Queries
 				Result := FALSE
 			end
 		end
-
-
 
 invariant
 	number >= 1 and number <= 20
